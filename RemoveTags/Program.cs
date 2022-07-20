@@ -1,6 +1,5 @@
 ﻿using LoggingDemo;
 using LoggingDemo.Helpers;
-using NLog;
 
 namespace PhotoCompare;
 

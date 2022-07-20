@@ -2,8 +2,6 @@
 using LoggingDemo.Helpers;
 
 namespace PhotoCompare;
-using NLog;
-
 
 public class Cleaner
 {

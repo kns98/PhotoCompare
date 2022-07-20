@@ -1,4 +1,3 @@
-using System;
 using LoggingDemo.Helpers;
 
 namespace LoggingDemo
