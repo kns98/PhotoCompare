@@ -22,7 +22,7 @@ internal class PhotoCompare
             {
                 if (_dupkey == "")
                 {
-                    typeof(Program).Info("Please enter a dup key:");
+                    typeof(PhotoLogger).Info("Please enter a dup key:");
                     _dupkey = Console.ReadLine();
                 }
 
@@ -71,7 +71,7 @@ internal class PhotoCompare
         {
             lock (loopLock)
             {
-                typeof(Program).Info(fi.FullName);
+                typeof(PhotoLogger).Info(fi.FullName);
 
                 File.SetAttributes(fi.FullName,
                     File.GetAttributes(fi.FullName) & ~FileAttributes.ReadOnly);
@@ -128,12 +128,12 @@ internal class PhotoCompare
             }
             catch (NullReferenceException ex)
             {
-                typeof(Program).Error(ex);
+                typeof(PhotoLogger).Error(ex);
                 return null;
             }
             catch (Exception ex)
             {
-                typeof(Program).Error( ex);
+                typeof(PhotoLogger).Error( ex);
                 return null;
             }
         }

@@ -7,7 +7,7 @@ namespace PhotoCompare
     {
         public static void Run_Main()
         {
-            typeof(Program).Info("Please enter start folder: ");
+            typeof(PhotoLogger).Info("Please enter start folder: ");
             var startFolder = Console.ReadLine();
 
             if (startFolder != null)
@@ -15,7 +15,7 @@ namespace PhotoCompare
                 PhotoCompare.Run(startFolder);
             }
 
-            typeof(Program).Info("Press any key to exit");
+            typeof(PhotoLogger).Info("Press any key to exit");
             Console.ReadKey();
         }
     }

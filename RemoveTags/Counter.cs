@@ -18,7 +18,7 @@ internal class Counter
         lock (CountLock)
         {
             _count++;
-            typeof(Program).Info(name + " Count: " + _count);
+            typeof(PhotoLogger).Info(name + " Count: " + _count);
             return _count;
         }
     }

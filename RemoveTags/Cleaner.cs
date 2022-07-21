@@ -29,27 +29,27 @@ public class Cleaner
             var b = (bool)ret;
             if (b)
             {
-                typeof(Program).Info( _fi.FullName + " is the same as " + _fi2.FullName);
+                typeof(PhotoLogger).Info( _fi.FullName + " is the same as " + _fi2.FullName);
 
                 if (PhotoCompare.Dupkey != null && _fi.Name.Contains(PhotoCompare.Dupkey))
                 {
-                    typeof(Program).Info("Deleting file: " + _fi.Name);
-                    File.Delete(_fi.FullName);
+                    typeof(PhotoLogger).Info("Deleting file: " + _fi.Name);
+                    //File.Delete(_fi.FullName);
                 }
                 
                 else if (PhotoCompare.Dupkey != null && _fi2.Name.Contains(PhotoCompare.Dupkey))
                 {
-                    typeof(Program).Info(   "Deleting file: " + _fi2.Name);
-                    File.Delete(_fi2.FullName);
+                    typeof(PhotoLogger).Info(   "Deleting file: " + _fi2.Name);
+                    //File.Delete(_fi2.FullName);
                 }
                 else
                 {
-                    typeof(Program).Info(   "No dupkey so no deltions.");
+                    typeof(PhotoLogger).Info(   "No dupkey so no deltions.");
                 }
             }
             else
             {
-                typeof(Program).Info(_fi.FullName + " is not the same as " + _fi2.FullName);
+                typeof(PhotoLogger).Info(_fi.FullName + " is not the same as " + _fi2.FullName);
             }
         }
     }

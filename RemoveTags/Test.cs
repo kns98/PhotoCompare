@@ -29,7 +29,7 @@ namespace PhotoCompare
 
             PhotoCompare.Run(startFolder2);
 
-            typeof(Program).Info("Press any key to exit");
+            typeof(PhotoLogger).Info("Press any key to exit");
             Console.ReadKey();
         }
     }

@@ -1,6 +1,6 @@
 namespace LoggingDemo
 {
-    class Program
+    class PhotoLogger
     {
  
     }
