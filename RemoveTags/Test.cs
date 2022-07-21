@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
-using LoggingDemo;
-using LoggingDemo.Helpers;
+using PhotoCompare.Logging;
 
 namespace PhotoCompare
 {
@@ -8,8 +7,8 @@ namespace PhotoCompare
     {
         public static void Main_Test()
         {
-            PhotoCompare._dupkey = "-BIBI";
-            PhotoCompare.Threading = false;
+            Program._dupkey = "-BIBI";
+            Program.Threading = false;
 
 
             var startFolder1 =
@@ -18,7 +17,7 @@ namespace PhotoCompare
                         Process.GetCurrentProcess().MainModule.FileName
                     ), @"..\..\..\Tests\Different");
 
-            PhotoCompare.Run(startFolder1);
+            Program.Run(startFolder1);
 
 
             var startFolder2 =
@@ -27,9 +26,9 @@ namespace PhotoCompare
                         Process.GetCurrentProcess().MainModule.FileName
                     ), @"..\..\..\Tests\Same");
 
-            PhotoCompare.Run(startFolder2);
+            Program.Run(startFolder2);
 
-            typeof(PhotoLogger).Info("Press any key to exit");
+            typeof(Log).Info("Press any key to exit");
             Console.ReadKey();
         }
     }

@@ -1,9 +1,8 @@
-﻿using LoggingDemo;
-using LoggingDemo.Helpers;
+﻿using PhotoCompare.Logging;
 
-namespace PhotoCompare;
+namespace PhotoCompare.Logging;
 
-internal class PhotoCompare
+internal class Program
 {
 
     private static readonly Dictionary<(string, string), object> Lockdict = new();
@@ -22,7 +21,7 @@ internal class PhotoCompare
             {
                 if (_dupkey == "")
                 {
-                    typeof(PhotoLogger).Info("Please enter a dup key:");
+                    typeof(Log).Info("Please enter a dup key:");
                     _dupkey = Console.ReadLine();
                 }
 
@@ -40,7 +39,7 @@ internal class PhotoCompare
 
     public static void Main()
     {
-        LoggingDemo.Helpers.Logging.Initialize();
+         PhotoCompare.Logging.LogExt.Initialize();
 
         if (testing)
         {
@@ -71,7 +70,7 @@ internal class PhotoCompare
         {
             lock (loopLock)
             {
-                typeof(PhotoLogger).Info(fi.FullName);
+                typeof(Log).Info(fi.FullName);
 
                 File.SetAttributes(fi.FullName,
                     File.GetAttributes(fi.FullName) & ~FileAttributes.ReadOnly);
@@ -128,12 +127,12 @@ internal class PhotoCompare
             }
             catch (NullReferenceException ex)
             {
-                typeof(PhotoLogger).Error(ex);
+                typeof(Log).Error(ex);
                 return null;
             }
             catch (Exception ex)
             {
-                typeof(PhotoLogger).Error( ex);
+                typeof(Log).Error( ex);
                 return null;
             }
         }

@@ -1,7 +1,0 @@
-namespace LoggingDemo
-{
-    class PhotoLogger
-    {
- 
-    }
-}

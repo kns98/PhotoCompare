@@ -1,21 +1,20 @@
-﻿using LoggingDemo;
-using LoggingDemo.Helpers;
+﻿using PhotoCompare.Logging;
 
-namespace PhotoCompare
+namespace PhotoCompare.Logging
 {
     internal class Runner
     {
         public static void Run_Main()
         {
-            typeof(PhotoLogger).Info("Please enter start folder: ");
+            typeof(Log).Info("Please enter start folder: ");
             var startFolder = Console.ReadLine();
 
             if (startFolder != null)
             {
-                PhotoCompare.Run(startFolder);
+                Program.Run(startFolder);
             }
 
-            typeof(PhotoLogger).Info("Press any key to exit");
+            typeof(Log).Info("Press any key to exit");
             Console.ReadKey();
         }
     }

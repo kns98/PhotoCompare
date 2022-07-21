@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace PhotoCompare;
+namespace PhotoCompare.Logging;
 
 internal class Hasher
 {

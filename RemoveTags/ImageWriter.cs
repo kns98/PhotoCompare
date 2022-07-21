@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using ImageMagick;
 
-namespace PhotoCompare
+namespace PhotoCompare.Logging
 {
     public interface ImageWriter
     {

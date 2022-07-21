@@ -1,6 +1,6 @@
-using LoggingDemo.Helpers;
+using PhotoCompare.Logging;
 
-namespace LoggingDemo
+namespace PhotoCompare.Logging
 {
     public static class MyStaticClass
     {

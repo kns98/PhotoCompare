@@ -2,9 +2,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using NLog;
 
-namespace LoggingDemo.Helpers
+namespace PhotoCompare.Logging
 {
-    public static class Logging
+    public static class LogExt
     {
         private static Logger _logger; //NLog logger
 
@@ -28,7 +28,7 @@ namespace LoggingDemo.Helpers
             config.LoggingRules.Add(new NLog.Config.LoggingRule("*", LogLevel.Debug, logFile));
 
             LogManager.Configuration = config;
-            typeof(Logging).Trace($"Logging started. Log file: {logFile.FileName}");
+            typeof(LogExt).Trace($"LogExt started. LogExt file: {logFile.FileName}");
         }
 
         public static void Trace<T>(

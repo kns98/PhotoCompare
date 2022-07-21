@@ -1,7 +1,6 @@
-﻿using LoggingDemo;
-using LoggingDemo.Helpers;
+﻿using PhotoCompare.Logging;
 
-namespace PhotoCompare;
+namespace PhotoCompare.Logging;
 
 internal class Counter
 {
@@ -18,7 +17,7 @@ internal class Counter
         lock (CountLock)
         {
             _count++;
-            typeof(PhotoLogger).Info(name + " Count: " + _count);
+            typeof(Log).Info(name + " Count: " + _count);
             return _count;
         }
     }

@@ -1,7 +1,6 @@
-﻿using LoggingDemo;
-using LoggingDemo.Helpers;
+﻿using PhotoCompare.Logging;
 
-namespace PhotoCompare;
+namespace PhotoCompare.Logging;
 
 public class Cleaner
 {
@@ -22,34 +21,34 @@ public class Cleaner
 
     public void Run()
     {
-        var ret = PhotoCompare.CheckEqual(_fi, _fi2);
+        var ret = Program.CheckEqual(_fi, _fi2);
 
         if (ret != null)
         {
             var b = (bool)ret;
             if (b)
             {
-                typeof(PhotoLogger).Info( _fi.FullName + " is the same as " + _fi2.FullName);
+                typeof(Log).Info( _fi.FullName + " is the same as " + _fi2.FullName);
 
-                if (PhotoCompare.Dupkey != null && _fi.Name.Contains(PhotoCompare.Dupkey))
+                if (Program.Dupkey != null && _fi.Name.Contains(Program.Dupkey))
                 {
-                    typeof(PhotoLogger).Info("Deleting file: " + _fi.Name);
+                    typeof(Log).Info("Deleting file: " + _fi.Name);
                     //File.Delete(_fi.FullName);
                 }
                 
-                else if (PhotoCompare.Dupkey != null && _fi2.Name.Contains(PhotoCompare.Dupkey))
+                else if (Program.Dupkey != null && _fi2.Name.Contains(Program.Dupkey))
                 {
-                    typeof(PhotoLogger).Info(   "Deleting file: " + _fi2.Name);
+                    typeof(Log).Info(   "Deleting file: " + _fi2.Name);
                     //File.Delete(_fi2.FullName);
                 }
                 else
                 {
-                    typeof(PhotoLogger).Info(   "No dupkey so no deltions.");
+                    typeof(Log).Info(   "No dupkey so no deltions.");
                 }
             }
             else
             {
-                typeof(PhotoLogger).Info(_fi.FullName + " is not the same as " + _fi2.FullName);
+                typeof(Log).Info(_fi.FullName + " is not the same as " + _fi2.FullName);
             }
         }
     }
